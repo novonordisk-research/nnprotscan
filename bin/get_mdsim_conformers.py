@@ -6,6 +6,10 @@ import pandas as pd
 from nnprotscan import mdprep
 from nnprotscan.linkage_model import LinkageModel
 
+# supress pesky biopython warnings
+import warnings
+warnings.simplefilter ("ignore")
+
 _PH = 7.0
 
 # user args
@@ -15,8 +19,14 @@ parser.add_argument("matcher_path", help="Output path containing results of the 
 parser.add_argument("-c", "--chain", help="Binder chain id in the matcher PDB files.")
 parser.add_argument("-l", "--linkage", default="amide", help="Type of acylation.")
 parser.add_argument("-o", "--output_path", default="md_conf", help="Output path for writing PDB files.")
+parser.add_argument("-gmx", "--to_gmx", action="store_true", help="If true convert to a gromacs compatible PDB file.")
+parser.add_argument("-ff", "--forcefield", help="If requesting gromacs conversion, supply forcefield name.")
 
 args = parser.parse_args()
+
+# check if ff has been provided
+if args.to_gmx and (args.forcefield is None):
+    raise TypeError("Forcefield required if conversion to gromacs compatible PDB is requested.")
 
 # create output path
 output_path = os.path.abspath(args.output_path)
@@ -54,5 +64,7 @@ for i in range(len(df)):
         t.acylate()
         
         t.write(tar_file)
-                
-
+        
+        if args.to_gmx:
+            mdprep.convert_to_gmx(pdb_file=tar_file, chain_id=args.chain, ff=args.forcefield)
+            
