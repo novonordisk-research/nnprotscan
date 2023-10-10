@@ -1,0 +1,44 @@
+# rosetta re-modelled GLP1R-GLP1 (water and caps added by Rosetta have been removed)
+open 6x18_glp1-7-36_glp1r-full_nowater_nocap.pdb
+
+# equilibrated system from MemProtMD(http://memprotmd.bioch.ox.ac.uk/_ref/PDB/6x18/_sim/6x18_default_dppc/)
+open 6x18_default_dppc.mpmd.finalframe.atomistic.pdb
+
+hide all
+~cartoon
+cartoon #1
+show ligand
+show solvent
+transparency solvent 80 target a
+
+# align the re-modelled structure to the protein in the solvated system
+match #1/R to #2/A
+
+# now delete the solvated protein
+sel #2/A
+del sel
+
+# remove part of the membrane too close to the protein
+sel zone #1/R:110-130 8 ligand residues true
+del sel
+
+# remove solvent too close to the peptide
+sel zone #1/P 20 solvent residues true
+del sel
+
+# remove solvent too far from the protein
+sel ligand:>45 & solvent residues true
+del sel
+
+# remove all ions (will add these later)
+del Na
+del Cl
+
+# remove ligand chains P, R, X since there are protein and protractor
+# chains with these names
+del #2/P,R,X
+
+# save two models to pdb file
+save glp1_glp1r_mdsim_chimerax_template_protein.pdb models #1 relModel #2
+save glp1_glp1r_mdsim_chimerax_template_environment.pdb models #2 relModel #2
+~sel

@@ -1,0 +1,16 @@
+CST::BEGIN
+  TEMPLATE::   ATOM_MAP: 1 atom_name: C2 C1 O1
+  TEMPLATE::   ATOM_MAP: 1 residue3: LIG
+
+  TEMPLATE::   ATOM_MAP: 2 atom_type: Nlys,
+  TEMPLATE::   ATOM_MAP: 2 residue1: K
+
+  CONSTRAINT:: distanceAB:    1.50   0.10 100.00   1      1
+  CONSTRAINT::    angle_A:  109.00   5.00 10.00  360.00   1
+  CONSTRAINT::    angle_B:  109.00   5.00 10.00  360.00   1
+  CONSTRAINT::  torsion_A: -164.20 360.00   0.00  360.00  12
+  CONSTRAINT::  torsion_B: -120.00 360.00   0.00  360.00  12
+  CONSTRAINT:: torsion_AB: -117.00 360.00   0.00  360.00  12
+
+CST::END
+

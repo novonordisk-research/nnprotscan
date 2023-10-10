@@ -1,0 +1,21 @@
+name: nnprotscan
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.9
+  - numpy
+  - matplotlib
+  - plotly
+  - pandas
+  - biopython
+  - tqdm
+  - joblib
+  - pdbfixer
+  - pdb2pqr
+  - openmm
+  - openmmforcefields
+  - openff-toolkit
+  - mdanalysis
+  - pip
