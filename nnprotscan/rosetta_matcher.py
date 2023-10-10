@@ -1,4 +1,5 @@
 import os
+import shutil
 import glob
 import subprocess
 
@@ -38,6 +39,14 @@ PACKING_FLAGS = [
     "-no_his_his_pairE"
 ]
 
+# try and guess the location of ROSETTA_HOME
+# this is helpful when rosetta has been loaded through environment modules as on a HPC cluster
+if not "ROSETTA_HOME" in os.environ:
+    x = shutil.which("match.linuxgccrelease")
+    if x is not None:
+        os.environ["ROSETTA_HOME"] = os.path.dirname(os.path.dirname(x))
+
+
 def _check_rosetta_binary(binary, relpath=""):
     msg = "Rosetta binary path not found. Add this path using the environment variable ROSETTA_HOME"
     
@@ -63,12 +72,6 @@ def _run_shell_cmd(cmd, from_path=""):
     if not isinstance(cmd, list):
         cmd =[cmd]
     subprocess.check_call(" ".join(cmd), shell=True)
-    
-    #TODO: make the above work without the shell=True
-    # and then make the following version work
-    # p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    # stdout, stderr = p.communicate()
-    # print(stderr.decode("utf-8"))
     
     if from_path:
         os.chdir(curr_path)
@@ -148,7 +151,7 @@ def relax_protein(pdb_file, out_prefix=""):
     """
     
     binary = _check_rosetta_binary(
-        "relax.static.linuxgccrelease",
+        "relax.linuxgccrelease",
         relpath="bin"
     )
     
@@ -236,7 +239,7 @@ def prepare_linker_params(sdf_file, out_prefix="", linkage="amide"):
 def _run(input_files, output_path, rms_cutoff):
     
     binary = _check_rosetta_binary(
-        "match.static.linuxgccrelease",
+        "match.linuxgccrelease",
         relpath="bin"
     )
     
@@ -356,7 +359,7 @@ def run(pdb_file, params_file, constraint_file, output_path="matcher_outputs",
 
 def _score(input_files, output_path, chunk_id):
     binary = _check_rosetta_binary(
-        "rosetta_scripts.static.linuxgccrelease",
+        "rosetta_scripts.linuxgccrelease",
         relpath="bin"
     )
     
@@ -392,7 +395,6 @@ def _score(input_files, output_path, chunk_id):
         *PACKING_FLAGS
     ]
     
-    # TODO: remove bare exception when this step becomes bug-free
     try:
         _run_shell_cmd(cmd)
     except Exception as e:
