@@ -1,0 +1,41 @@
+define                  = -DPOSRES -DPOSRES_PROT=50.0
+integrator              = md
+dt                      = 0.002
+nsteps                  = 2500000
+nstxtcout               = 5000
+nstvout                 = 5000
+nstfout                 = 5000
+nstcalcenergy           = 100
+nstenergy               = 1000
+nstlog                  = 1000
+;
+cutoff-scheme           = Verlet
+nstlist                 = 20
+vdwtype                 = Cut-off
+coulombtype             = PME
+vdw-modifier            = Force-switch
+rlist                   = 1.2
+rvdw                    = 1.2
+rvdw_switch             = 1.0
+rcoulomb                = 1.2
+;
+tcoupl                  = V-rescale
+tc_grps                 = PROT MEMB SOLV
+tau_t                   = 1.0 1.0 1.0
+ref_t                   = 310.15 310.15 310.15
+;
+pcoupl                  = berendsen
+pcoupltype              = semiisotropic
+tau_p                   = 5.0
+compressibility         = 4.5e-5 4.5e-5
+ref_p                   = 1.0 1.0
+refcoord_scaling        = com
+;
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+continuation            = yes
+;
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = PROT MEMB SOLV
+
