@@ -11,7 +11,9 @@ The repository serves as a toolkit for researchers and scientists interested in 
 Within this repository, you will find:
 
 `Matcher Protocol Inputs:` The starting configurations and parameters needed to run the Matcher protocol from the Rosetta suite.
+
 `Molecular Dynamics Simulation Inputs:` Pre-configured files for initiating molecular dynamics simulations that complement the Matcher protocol outputs.
+
 `Example Data:` Sample results from our internal projects demonstrating the successful application of our workflow.
 
 We encourage you to explore the repository, utilize the resources provided, and contribute to the advancement of drug discovery through computational design. If you encounter any issues or have questions regarding the workflow, please feel free to open an issue or contact the repository maintainers.
