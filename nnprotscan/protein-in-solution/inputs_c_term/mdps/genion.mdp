@@ -1,0 +1,18 @@
+;define                 =-DPOSRES -DPOSRES_PROT=0.0 -DDIHRES
+define                  =-DFLEXIBLE
+integrator              = steep
+emtol                   = 700.0
+nsteps                  = 15000
+nstlist                 = 10
+cutoff-scheme           = Verlet
+vdwtype                 = Cut-off
+coulombtype             = PME
+vdw-modifier            = Force-switch
+rlist                   = 1.2
+rvdw                    = 1.2 
+rvdw_switch             = 1.0
+rcoulomb                = 1.2
+;
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+
