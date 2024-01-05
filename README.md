@@ -2,6 +2,8 @@
 
 Welcome to the GitHub repository dedicated to supporting the simulations for our recent manuscript on "Structure-based computational scanning of chemical modification sites in biologics". This repository contains all the necessary input files and resources required to replicate the computational workflow outlined in our study.
 
+![nnprotscan_workflow](./nnprotscan_workflow.png)
+
 ## Abstract:
 
 In our manuscript, we explore the enhancement of peptide and protein-based drugs through fatty acid derivatization—a chemical modification that can extend drug half-life, minimize immunogenicity, and refine drug delivery and uptake. Traditional methods for creating these modified therapeutics are often labor-intensive and result in products that may be unstable, inactive, or heterogenous. To overcome these challenges, we have introduced a novel hybrid computational approach that leverages the Matcher protocol from the Rosetta suite and molecular dynamics simulations. This method is designed to streamline the synthesis of chemically modified biologics, allowing for the precise tuning of their properties.
@@ -10,11 +12,11 @@ The repository serves as a toolkit for researchers and scientists interested in 
 
 Within this repository, you will find:
 
-`Matcher Protocol Inputs:` The starting configurations and parameters needed to run the Matcher protocol from the Rosetta suite.
+`bin`: This directory contains the foundational python scripts used to run the Rosetta Matcher Protocol.  
 
-`Molecular Dynamics Simulation Inputs:` Pre-configured files for initiating molecular dynamics simulations that complement the Matcher protocol outputs.
+`nnprotscan`: It contains the supporting python scripts used for Matcher Protocol and MD simulations. It contains the necessary scripts to run an MD simulation of genertic protein-in-solution system with protracted proteins. 
 
-`Example Data:` Sample results from our internal projects demonstrating the successful application of our workflow.
+`paper`: This directory contains all necessary scripts including running MD and post-processing MD simulation trajectories and jupyter notebooks. 
 
 ## Prerequisites:
 
