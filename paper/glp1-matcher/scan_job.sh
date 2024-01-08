@@ -5,8 +5,8 @@
 #SBATCH --mem=60G
 
 #module load rosetta/2021
-export ROSETTA_HOME=/nfs_home/projects/departments/cdd/programs/rosetta_src_2021.16.61629_bundle/main/source
-export PYTHONPATH=$PYTHONPATH:$HOME/Projects/method_dev/nnprotscan
+export ROSETTA_HOME=path_to_rosetta/rosetta_src_2021.16.61629_bundle/main/source
+export PYTHONPATH=$PYTHONPATH:$HOME/path_to_nnprotscan
 
 # conda environment
 eval "$(conda shell.bash hook)"

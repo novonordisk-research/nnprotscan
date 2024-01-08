@@ -9,9 +9,7 @@
 
 module purge
 
-module use --append /nfs_home/software/spack/environments/prod/shared/share/spack/modules/linux-ubuntu20.04-broadwell
-
-module load gromacs/2021.4-gcc-9.4.0-pwff4g4
+module load gromacs/2021.4
 
 module load openmpi/4.1.4
 module load cuda/11.7
@@ -23,7 +21,7 @@ cores=32
 
 nvidia-smi -L
 
-echo "Starting minimization"
+# echo "Starting minimization"
 
 #gmx_mpi grompp -f ${input_mdp}/step2.0_minimization.mdp -o step2.0_minimization.tpr -c ${input_str} -r ${input_str} -p ${input_top} -maxwarn -1
 

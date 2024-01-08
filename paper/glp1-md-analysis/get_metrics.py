@@ -9,7 +9,7 @@ import mdmetric
 RELOAD = False
 N_BLOCKS = 4
 DISTANCE_CUTOFF = 0.45 # nm
-GMX_OUTPUT_PATH = os.path.expanduser("~/../ndth/projects/protraction/GLP-1R/GLP1_GLP1R_SEM")
+GMX_OUTPUT_PATH = os.path.expanduser("path_to_glp1_md_results")
 
 # user input
 acylation_resid = int(sys.argv[1])

@@ -9,10 +9,7 @@
 
 module purge
 
-module use --append /nfs_home/software/spack/environments/prod/shared/share/spack/modules/linux-ubuntu20.04-broadwell
-
-module load gromacs/2021.4-gcc-9.4.0-pwff4g4
-
+module load gromacs/2021.4
 module load openmpi/4.1.4
 module load cuda/11.7
 
