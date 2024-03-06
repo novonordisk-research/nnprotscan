@@ -1,3 +1,7 @@
+🖥️ Code and packages from the Molecular AI team at Novo Nordisk AI & Digital Research.
+
+💊 Currently the Molecular AI team is focused on developing tools for computational drug design of macrocyclic, peptide and oligonucleotide therapeutics.
+
 # Structure-based computational scanning of chemical modification sites in biologics
 
 Welcome to the GitHub repository dedicated to supporting the simulations for our recent manuscript on "Structure-based computational scanning of chemical modification sites in biologics". This repository contains all the necessary input files and resources required to replicate the computational workflow outlined in our study.
