@@ -30,7 +30,7 @@ Rosetta software requires license. The software and the license can be obtained 
 
 GROMACS and OpenMM are freely available and can be obtained from https://www.gromacs.org and https://openmm.org respectively.
 
-Two download the repository:
+To download the repository:
 
 `git clone https://github.com/novonordisk-research/nnprotscan.git`
 
