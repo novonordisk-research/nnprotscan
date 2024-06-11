@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ###############################################################################################################################################################
-## Author: Nidhin Thomas (NDTH)
 ## This script organizes the PDB outputs from Rosetta Match Protocol and runs MD simulations on all selected structures.
 
 ## bash protein_preparation.sh path/to/target/directory path/to/pdb/directory starting_atom_ID/for/mutating/residue ending_atom_ID/for/mutating/residue
