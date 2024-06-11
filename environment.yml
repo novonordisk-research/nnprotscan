@@ -1,4 +1,4 @@
-name: nnprotscan
+name: nnprotscan_2
 channels:
   - conda-forge
   - bioconda
