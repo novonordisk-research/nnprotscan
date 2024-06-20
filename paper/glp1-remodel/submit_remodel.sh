@@ -11,4 +11,5 @@ path_to_rosetta/bin/remodel.static.linuxgccrelease \
 -remodel::quick_and_dirty \
 -remodel:blueprint 6x18_blueprint_chR \
 -remodel::num_trajectory 5 \
+-remodel::use_pose_relax \
 -nstruct 20 \
