@@ -1254,6 +1254,17 @@
  [ impropers ]
     -C    CA     N    HN
     CA    +N     C     O
+    CE    C1    NZ   HZ1
+    NZ    C3    C1    O2
+    C9   C11   N10  H101
+   N10   C13   C11   O12
+   C19   C21   N20  H201
+   N20   C23   C21   O22
+   C25   O27   C26   O28
+   C25   C30   N29  H291
+   N29   C32   C30   O31
+   C47   O49   C48   O50
+
 
 
 [ ORN ] ; charges taken from amber99.prm of tinker 4.0
@@ -1298,8 +1309,18 @@
      C     O
     -C     N
  [ impropers ]
-    -C    CA     N     H
+    -C    CA     N    HN
     CA    +N     C     O
+    CE    C1    NZ   HZ1
+    NZ    C3    C1    O2
+    C9   C11   N10  H101
+   N10   C13   C11   O12
+   C19   C21   N20  H201
+   N20   C23   C21   O22
+   C25   O27   C26   O28
+   C25   C30   N29  H291
+   N29   C32   C30   O31
+   C47   O49   C48   O50
 
 [ DAB ] ; sidechain charges fit to maintain heavy atom charge group trend LYS -> ORN -> DAB
  [ atoms ]
@@ -2525,7 +2546,7 @@
 		N	N	-0.62849400	0
 		HN	H	0.37535800	1
 		C	C	0.37098900	2
-		OC1	O2	-0.65393850	3
+		O	O2	-0.65393850	3
 		OC2	O2	-0.65393850	4
 		CA	CT	-0.04106800	5
 		HA	H1	0.07906600	6
@@ -2544,7 +2565,7 @@
 		NZ	N	-0.42356500	19
 		HZ1	H	0.31524200	20
 		C1	C	0.53050000	21
-		ON	O	-0.57300000	22
+		O2	O	-0.57300000	22
 		C3	CT	0.02250000	23
 		H31	H1	0.05640000	24
 		H32	H1	0.05640000	25
@@ -2663,8 +2684,8 @@
 	    N    HN
 	    N    CA
 	    C    CA
-	  OC1     C
-	  OC2     C
+	    C   OC1
+      C   OC2
 	   CA    HA
 	   CB   HB1
 	   CB   HB2
@@ -2675,8 +2696,8 @@
 	   CE   HE1
 	   CE   HE2
 	   NZ   HZ1
-	   C1    NZ
-	   C1    ON
+     C1    NZ
+	   C1    O2
 	   C3    C1
 	   C3   H31
      C3   H32
@@ -2787,8 +2808,18 @@
 	  O50   C48
     -C      N
  [ impropers ]
-    -C    CA     N    HN    
+    -C    CA     N     H    
     CA   OC1     C   OC2
+    CE    C1    NZ   HZ1
+    NZ    C3    C1    O2
+    C9   C11   N10  H101
+   N10   C13   C11   O12
+   C19   C21   N20  H201
+   N20   C23   C21   O22
+   C25   O27   C26   O28
+   C25   C30   N29  H291
+   N29   C32   C30   O31
+   C47   O49   C48   O50
                         
 [ CPRO ]
  [ atoms ]

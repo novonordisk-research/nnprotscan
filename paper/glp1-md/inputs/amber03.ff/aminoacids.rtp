@@ -1254,6 +1254,17 @@
  [ impropers ]
     -C    CA     N    HN
     CA    +N     C     O
+    CE    C1    NZ   HZ1
+    NZ    C3    C1    O2
+    C9   C11   N10  H101
+   N10   C13   C11   O12
+   C19   C21   N20  H201
+   N20   C23   C21   O22
+   C25   O27   C26   O28
+   C25   C30   N29  H291
+   N29   C32   C30   O31
+   C47   O49   C48   O50
+
 
 
 [ ORN ] ; charges taken from amber99.prm of tinker 4.0
@@ -1298,8 +1309,18 @@
      C     O
     -C     N
  [ impropers ]
-    -C    CA     N     H
+    -C    CA     N    HN
     CA    +N     C     O
+    CE    C1    NZ   HZ1
+    NZ    C3    C1    O2
+    C9   C11   N10  H101
+   N10   C13   C11   O12
+   C19   C21   N20  H201
+   N20   C23   C21   O22
+   C25   O27   C26   O28
+   C25   C30   N29  H291
+   N29   C32   C30   O31
+   C47   O49   C48   O50
 
 [ DAB ] ; sidechain charges fit to maintain heavy atom charge group trend LYS -> ORN -> DAB
  [ atoms ]
@@ -2789,6 +2810,16 @@
  [ impropers ]
     -C    CA     N     H    
     CA   OC1     C   OC2
+    CE    C1    NZ   HZ1
+    NZ    C3    C1    O2
+    C9   C11   N10  H101
+   N10   C13   C11   O12
+   C19   C21   N20  H201
+   N20   C23   C21   O22
+   C25   O27   C26   O28
+   C25   C30   N29  H291
+   N29   C32   C30   O31
+   C47   O49   C48   O50
                         
 [ CPRO ]
  [ atoms ]
